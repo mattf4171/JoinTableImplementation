@@ -1,0 +1,18 @@
+Week 02
+Programmer: <Matthew Fernandez>
+Partner: <Yuki Okamoto>
+How much time did your spend reviewing your partern's code:  <60 minutes> 
+
+The following is repeated for each item brought up at the review.
+
+Item Description: <natrualJoin method -> list to find ducplicates is wrong, need to only add one of the column names not both> 
+Classification:   code Error
+Resolution:  YES 
+
+Item Description: <Method to check to see if the column name w/r to the value needs to be within a loop> 
+Classification:   code Error
+Resolution:  YES 
+
+Item Description: <create an array list in java not an array, dynamically allocated list makes your code simpler> 
+Classification:   Suggestion
+Resolution:  YES
