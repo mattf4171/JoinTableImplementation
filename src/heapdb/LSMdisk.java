@@ -153,7 +153,8 @@ public class LSMdisk implements Iterable<Tuple> {
 		if (!rc) throw new RuntimeException("Merge failed. Unable to rename temp file");
 
 		bfile = new BlockedFile(filename+".lsm", false);  // open the disk file.
-
+		index.close();
+		index = new LSMindex(filename+".ism", schema,true);
 		buildIndex();
 		
 		return true;
@@ -163,13 +164,13 @@ public class LSMdisk implements Iterable<Tuple> {
       * build sparse index over LSMdisk blocks
       */
      void buildIndex() {
-    	 // TODO  this will be implemented in week 8.
+// 		 TODO  this will be implemented in week 8.
 //    	 scan all tuples in the disk file and use the LSMindex insert(key, blockno) 
 //    	 method to create index entries.  After all leaf node entries, call 
 //    	 createIndexTree to create non-leaf blocks up to an including root block.  
 //    	 Root block must be the last block in index file.
  		 ByteBuffer b  = ByteBuffer.wrap(new  byte[heapdb.Constants.BLOCK_SIZE]);
-    	 LSMindex index = new LSMindex(filename, schema, true);
+//    	 LSMindex index = new LSMindex(filename, schema, true);
     	 LSMIterator it = iterator();
     	 Tuple prevBuffer = new Tuple(schema);
     	 int counter = 1;
